@@ -22,6 +22,7 @@ playerName = None
 nameEntry = None
 nameWindow = None
 gameWindow = None
+flashNumberLabel = None
 current_numberList = []
 ticketGrid = []
 
@@ -87,6 +88,9 @@ def createGameWindow():
 
     canvas2.create_image(0, 0, image=bg, anchor="nw")
 
+    flashNumberLabel = canvas2.create_text(
+        900, 700, text="Waiting for other players to join...", font=("Chalkboard SE", 30), fill="#3e2723")
+
     createTicket()
     placeNumber()
 
@@ -100,7 +104,7 @@ def createTicket():
                       relief='ridge', borderwidth=5, bg='white')
     # mianLable.place(x=95, y=119)
 
-    xPos = 500
+    xPos = 600
     yPos = 230
     for row in range(0, 3):
         rowList = []
@@ -125,7 +129,7 @@ def createTicket():
             xPos += 75
         # Creating nested array
         ticketGrid.append(rowList)
-        xPos = 500
+        xPos = 600
         yPos += 82
 
 
